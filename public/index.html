@@ -145,77 +145,58 @@
           </div>
         </section>
 
-        <!-- 4. BOUNCING OFFER CARDS (50% PROMO + AFFILIATE PROGRAM 35%) + CONVERTING CTA -->
-        <section id="cta" class="bg-zinc-50 py-12 sm:py-20">
+        <!-- 4. COMPACT BOUNCING OFFER CARDS (50% PROMO + AFFILIATE 35%) + CONVERTING CTA -->
+        <section id="cta" class="bg-zinc-50 py-11 sm:py-16">
           <div class="mx-auto max-w-5xl px-4 sm:px-6">
-            <!-- Two Bouncing Offer Cards -->
-            <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
-              <!-- Card 1: Promo 50% -->
+            <!-- Two Very Compact Bouncing Mini Cards (Titles Only -> Principal Landing Page) -->
+            <div class="mx-auto grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+              <!-- Mini Card 1: Promo 50% -->
               <a
                 href="https://www.proteusflow.com"
                 data-forward-params
-                class="animate-card-bounce group relative block overflow-hidden rounded-3xl border-2 border-emerald-500/40 bg-white p-6 shadow-lifted transition hover:border-emerald-500 sm:p-8"
+                class="animate-card-bounce group flex items-center justify-between gap-3 rounded-2xl border border-emerald-500/35 bg-white px-4 py-3 shadow-card transition hover:border-emerald-500"
               >
-                <div class="flex items-center justify-between gap-3">
-                  <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-500 px-3.5 py-1 text-xs font-extrabold uppercase tracking-wider text-white shadow-sm">
-                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2Z" />
-                    </svg>
-                    Promo 50% Off
+                <div class="flex min-w-0 items-center gap-2.5">
+                  <span class="shrink-0 rounded-full bg-emerald-500 px-2.5 py-0.5 font-mono text-[10px] font-extrabold uppercase tracking-wider text-white">
+                    50% OFF
                   </span>
-                  <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-emerald-50 text-emerald-600 transition-transform group-hover:translate-x-1">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M5 12h14" />
-                      <path d="m12 5 7 7-7 7" />
-                    </svg>
+                  <span class="truncate font-sans text-sm font-extrabold tracking-tight text-zinc-950 sm:text-[15px]">
+                    Claim 50% Launch Promo
                   </span>
                 </div>
-
-                <h3 class="mt-4 font-sans text-2xl font-extrabold tracking-tight text-zinc-950 sm:text-3xl">
-                  Claim 50% Launch Promo Inside
-                </h3>
-                <p class="mt-2 text-sm font-medium leading-relaxed text-zinc-600 sm:text-base">
-                  Unlock limited-time 50% promo savings on your Super AI Agent workspace access when you create your
-                  account today.
-                </p>
+                <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-emerald-50 text-emerald-600 transition-transform group-hover:translate-x-0.5">
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </span>
               </a>
 
-              <!-- Card 2: Affiliate Program (35% live commission) -->
+              <!-- Mini Card 2: Affiliate Program 35% (Also links straight to principal landing page) -->
               <a
-                href="https://www.proteusflow.com/affiliates"
+                href="https://www.proteusflow.com"
                 data-forward-params
-                class="animate-card-bounce-delayed group relative block overflow-hidden rounded-3xl border-2 border-meta-500/35 bg-white p-6 shadow-lifted transition hover:border-meta-500 sm:p-8"
+                class="animate-card-bounce-delayed group flex items-center justify-between gap-3 rounded-2xl border border-meta-500/30 bg-white px-4 py-3 shadow-card transition hover:border-meta-500"
               >
-                <div class="flex items-center justify-between gap-3">
-                  <span class="inline-flex items-center gap-1.5 rounded-full bg-meta-500 px-3.5 py-1 text-xs font-extrabold uppercase tracking-wider text-white shadow-sm">
-                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                      <circle cx="9" cy="7" r="4" />
-                      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                    </svg>
-                    Earn 35% Recurring
+                <div class="flex min-w-0 items-center gap-2.5">
+                  <span class="shrink-0 rounded-full bg-meta-500 px-2.5 py-0.5 font-mono text-[10px] font-extrabold uppercase tracking-wider text-white">
+                    35% EARN
                   </span>
-                  <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-meta-50 text-meta-600 transition-transform group-hover:translate-x-1">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M5 12h14" />
-                      <path d="m12 5 7 7-7 7" />
-                    </svg>
+                  <span class="truncate font-sans text-sm font-extrabold tracking-tight text-zinc-950 sm:text-[15px]">
+                    Join Affiliation &amp; Earn 35%
                   </span>
                 </div>
-
-                <h3 class="mt-4 font-sans text-2xl font-extrabold tracking-tight text-zinc-950 sm:text-3xl">
-                  Join Our Affiliation Program &amp; Earn 35%
-                </h3>
-                <p class="mt-2 text-sm font-medium leading-relaxed text-zinc-600 sm:text-base">
-                  Share Super AI Agent with media buyers, brands, and creative teams—get your custom link &amp; earn 35%
-                  on every paid customer.
-                </p>
+                <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-meta-50 text-meta-600 transition-transform group-hover:translate-x-0.5">
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </span>
               </a>
             </div>
 
             <!-- Final High-Converting CTA Box -->
-            <div class="mt-8 rounded-3xl border border-meta-500/20 bg-white px-5 py-10 text-center shadow-lifted sm:mt-10 sm:px-10 sm:py-14">
+            <div class="mt-6 rounded-3xl border border-meta-500/20 bg-white px-5 py-10 text-center shadow-lifted sm:mt-8 sm:px-10 sm:py-14">
               <h2 class="mx-auto max-w-3xl font-sans text-[1.9rem] font-extrabold leading-[1.08] tracking-[-0.04em] text-zinc-950 sm:text-5xl">
                 Ready to Launch Winning Ad Batches Inside
                 <span class="text-meta-500">Super AI Agent</span>?
@@ -248,7 +229,7 @@
                     aria-live="polite"
                     class="pf-toast pf-toast-hidden flex w-full items-center gap-3 rounded-2xl border border-black/10 bg-white px-3.5 py-2.5 text-left shadow-card"
                   >
-                    <div id="activity-avatar" class="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl border-2 border-zinc-900 bg-meta-50"></div>
+                    <div id="activity-avatar" class="relative h-12 w-12 shrink-0 overflow-hidden rounded-full ring-2 ring-black/[0.08] shadow-sm bg-meta-50"></div>
                     <div class="min-w-0 flex-1">
                       <div class="flex items-center justify-between gap-2">
                         <span id="activity-name" class="truncate text-sm font-extrabold leading-tight text-zinc-950"></span>
@@ -338,72 +319,85 @@
           }
         });
 
-        // 3. 20 Virtual Users with Name-Matched Comic SVG Avatars & 2s CTA Notification Cycle
+        // 3. 20 Virtual Users with Trending Modern Gradient Illustrated Avatars & 2s Notification Cycle
         var USERS = [
-          { name: "Sam", role: "Brand owner", msg: "Subscribed to the Pro plan", time: "Just now", bg: "#DBEAFE", skin: "#F3C6A5", hair: "#1E293B", style: "short", shirt: "#0866FF", glasses: true, beard: true },
-          { name: "Leila", role: "Creative strategist", msg: "Has batched 15 creatives today", time: "1m ago", bg: "#DCFCE7", skin: "#E5B28A", hair: "#3B1F16", style: "long", shirt: "#10B981", glasses: false, beard: false },
-          { name: "Marwan", role: "Video editor", msg: "Has just signed up", time: "Just now", bg: "#FEF3C7", skin: "#D99B72", hair: "#111827", style: "curly", shirt: "#18181B", glasses: false, beard: true },
-          { name: "Chloe", role: "Ecom store owner", msg: "Claimed the 50% launch promo", time: "2m ago", bg: "#FCE7F3", skin: "#F9D6C1", hair: "#B45309", style: "bob", shirt: "#EC4899", glasses: true, beard: false },
-          { name: "Tariq", role: "Media buyer", msg: "Exported 24 Meta & TikTok ads", time: "Just now", bg: "#E0E7FF", skin: "#C88A65", hair: "#0F172A", style: "fade", shirt: "#4F46E5", glasses: false, beard: true },
-          { name: "Maya", role: "Creative director", msg: "Joined the 35% affiliate program", time: "3m ago", bg: "#D1FAE5", skin: "#E9B796", hair: "#271710", style: "bun", shirt: "#059669", glasses: false, beard: false },
-          { name: "Noah", role: "Performance lead", msg: "Upgraded to the Max plan", time: "1m ago", bg: "#E0F2FE", skin: "#F5CCB0", hair: "#78350F", style: "part", shirt: "#0284C7", glasses: true, beard: false },
-          { name: "Yasmine", role: "UGC strategist", msg: "Batched 18 Reels variations today", time: "Just now", bg: "#FAE8FF", skin: "#DDA47E", hair: "#1F2937", style: "long", shirt: "#9333EA", glasses: false, beard: false },
-          { name: "Lucas", role: "Agency founder", msg: "Launched a 12-video ZIP batch", time: "4m ago", bg: "#FEF9C3", skin: "#F7D3BA", hair: "#451A03", style: "cap", shirt: "#EA580C", glasses: false, beard: true },
-          { name: "Nadia", role: "Brand owner", msg: "Has just signed up for Pro", time: "Just now", bg: "#DCFCE7", skin: "#D79B74", hair: "#18181B", style: "bob", shirt: "#0866FF", glasses: true, beard: false },
-          { name: "Karim", role: "Senior video editor", msg: "Formatted 30 ad angles today", time: "2m ago", bg: "#DBEAFE", skin: "#C68B63", hair: "#111827", style: "short", shirt: "#0F766E", glasses: true, beard: true },
-          { name: "Sofia", role: "Ecom growth lead", msg: "Subscribed to the Max plan", time: "Just now", bg: "#FFE4E6", skin: "#F4C9AD", hair: "#5B2314", style: "long", shirt: "#E11D48", glasses: false, beard: false },
-          { name: "Adam", role: "Media buyer", msg: "Unlocked the 50% launch promo", time: "1m ago", bg: "#ECFDF5", skin: "#E8BA97", hair: "#1E293B", style: "fade", shirt: "#10B981", glasses: false, beard: false },
-          { name: "Hiba", role: "Content strategist", msg: "Batched 22 TikTok creatives today", time: "Just now", bg: "#EDE9FE", skin: "#DCA27C", hair: "#291812", style: "bun", shirt: "#6366F1", glasses: true, beard: false },
-          { name: "Omar", role: "DTC founder", msg: "Has just signed up", time: "2m ago", bg: "#FFEDD5", skin: "#BF835D", hair: "#0F172A", style: "curly", shirt: "#2563EB", glasses: false, beard: true },
-          { name: "Elena", role: "Paid social lead", msg: "Exported 16 campaign videos today", time: "Just now", bg: "#CFFAFE", skin: "#FAD7C3", hair: "#92400E", style: "part", shirt: "#0891B2", glasses: false, beard: false },
-          { name: "Zayd", role: "Video editor", msg: "Joined the 35% affiliate program", time: "3m ago", bg: "#DBEAFE", skin: "#CE936D", hair: "#18181B", style: "cap", shirt: "#1D4ED8", glasses: true, beard: false },
-          { name: "Lina", role: "Brand strategist", msg: "Subscribed to the Pro plan", time: "Just now", bg: "#FEF3C7", skin: "#ECC09E", hair: "#3F2316", style: "bob", shirt: "#D97706", glasses: false, beard: false },
-          { name: "Ryan", role: "Ad creative lead", msg: "Batched 14 hook variations today", time: "1m ago", bg: "#F1F5F9", skin: "#F6CEB2", hair: "#713F12", style: "short", shirt: "#0F172A", glasses: false, beard: true },
-          { name: "Farah", role: "Ecom store owner", msg: "Has just launched her workspace", time: "Just now", bg: "#DCFCE7", skin: "#DDA480", hair: "#1F2937", style: "long", shirt: "#059669", glasses: true, beard: false }
+          { name: "Sam", role: "Brand owner", msg: "Subscribed to the Pro plan", time: "Just now", g1: "#60A5FA", g2: "#2563EB", skin: "#F3C6A5", hair: "#18181B", style: "curtain", shirt: "#0F172A", glasses: true, beard: true, pods: true },
+          { name: "Leila", role: "Creative strategist", msg: "Has batched 15 creatives today", time: "1m ago", g1: "#34D399", g2: "#059669", skin: "#E5B28A", hair: "#3B1F16", style: "waves", shirt: "#FFFFFF", glasses: false, beard: false, pods: false },
+          { name: "Marwan", role: "Video editor", msg: "Has just signed up", time: "Just now", g1: "#FBBF24", g2: "#EA580C", skin: "#D99B72", hair: "#111827", style: "taper", shirt: "#18181B", glasses: false, beard: true, pods: true },
+          { name: "Chloe", role: "Ecom store owner", msg: "Claimed the 50% launch promo", time: "2m ago", g1: "#F472B6", g2: "#DB2777", skin: "#F9D6C1", hair: "#B45309", style: "sleekbob", shirt: "#1E293B", glasses: true, beard: false, pods: false },
+          { name: "Tariq", role: "Media buyer", msg: "Exported 24 Meta & TikTok ads", time: "Just now", g1: "#818CF8", g2: "#4F46E5", skin: "#C88A65", hair: "#09090B", style: "crop", shirt: "#F8FAFC", glasses: false, beard: true, pods: false },
+          { name: "Maya", role: "Creative director", msg: "Joined the 35% affiliate program", time: "3m ago", g1: "#2DD4BF", g2: "#0D9488", skin: "#E9B796", hair: "#271710", style: "messybun", shirt: "#111827", glasses: true, beard: false, pods: false },
+          { name: "Noah", role: "Performance lead", msg: "Upgraded to the Max plan", time: "1m ago", g1: "#38BDF8", g2: "#0284C7", skin: "#F5CCB0", hair: "#78350F", style: "curtain", shirt: "#0866FF", glasses: false, beard: false, pods: true },
+          { name: "Yasmine", role: "UGC strategist", msg: "Batched 18 Reels variations today", time: "Just now", g1: "#C084FC", g2: "#9333EA", skin: "#DDA47E", hair: "#1F2937", style: "waves", shirt: "#0F172A", glasses: false, beard: false, pods: false },
+          { name: "Lucas", role: "Agency founder", msg: "Launched a 12-video ZIP batch", time: "4m ago", g1: "#FB923C", g2: "#DC2626", skin: "#F7D3BA", hair: "#451A03", style: "beanie", shirt: "#1E293B", glasses: false, beard: true, pods: false },
+          { name: "Nadia", role: "Brand owner", msg: "Has just signed up for Pro", time: "Just now", g1: "#4ADE80", g2: "#0866FF", skin: "#D79B74", hair: "#18181B", style: "sleekbob", shirt: "#FFFFFF", glasses: true, beard: false, pods: true },
+          { name: "Karim", role: "Senior video editor", msg: "Formatted 30 ad angles today", time: "2m ago", g1: "#60A5FA", g2: "#0F766E", skin: "#C68B63", hair: "#111827", style: "crop", shirt: "#0F172A", glasses: true, beard: true, pods: false },
+          { name: "Sofia", role: "Ecom growth lead", msg: "Subscribed to the Max plan", time: "Just now", g1: "#FB7185", g2: "#E11D48", skin: "#F4C9AD", hair: "#5B2314", style: "waves", shirt: "#1E293B", glasses: false, beard: false, pods: false },
+          { name: "Adam", role: "Media buyer", msg: "Unlocked the 50% launch promo", time: "1m ago", g1: "#34D399", g2: "#10B981", skin: "#E8BA97", hair: "#1E293B", style: "taper", shirt: "#09090B", glasses: false, beard: false, pods: true },
+          { name: "Hiba", role: "Content strategist", msg: "Batched 22 TikTok creatives today", time: "Just now", g1: "#A78BFA", g2: "#6366F1", skin: "#DCA27C", hair: "#291812", style: "messybun", shirt: "#F8FAFC", glasses: true, beard: false, pods: false },
+          { name: "Omar", role: "DTC founder", msg: "Has just signed up", time: "2m ago", g1: "#FBBF24", g2: "#D97706", skin: "#BF835D", hair: "#0F172A", style: "curlytop", shirt: "#0866FF", glasses: false, beard: true, pods: false },
+          { name: "Elena", role: "Paid social lead", msg: "Exported 16 campaign videos today", time: "Just now", g1: "#22D3EE", g2: "#0891B2", skin: "#FAD7C3", hair: "#92400E", style: "sleekbob", shirt: "#111827", glasses: false, beard: false, pods: true },
+          { name: "Zayd", role: "Video editor", msg: "Joined the 35% affiliate program", time: "3m ago", g1: "#3B82F6", g2: "#1D4ED8", skin: "#CE936D", hair: "#18181B", style: "beanie", shirt: "#FFFFFF", glasses: true, beard: false, pods: false },
+          { name: "Lina", role: "Brand strategist", msg: "Subscribed to the Pro plan", time: "Just now", g1: "#F59E0B", g2: "#EA580C", skin: "#ECC09E", hair: "#3F2316", style: "waves", shirt: "#0F172A", glasses: false, beard: false, pods: false },
+          { name: "Ryan", role: "Ad creative lead", msg: "Batched 14 hook variations today", time: "1m ago", g1: "#64748B", g2: "#0F172A", skin: "#F6CEB2", hair: "#713F12", style: "curtain", shirt: "#10B981", glasses: false, beard: true, pods: true },
+          { name: "Farah", role: "Ecom store owner", msg: "Has just launched her workspace", time: "Just now", g1: "#10B981", g2: "#047857", skin: "#DDA480", hair: "#1F2937", style: "messybun", shirt: "#0866FF", glasses: true, beard: false, pods: false }
         ];
 
-        function comicAvatarSvg(u) {
-          var backHair = "";
-          var frontHair = "";
-          if (u.style === "long") {
-            backHair = '<path d="M12 22 C11 10, 37 10, 36 22 L38 42 L10 42 Z" fill="' + u.hair + '" stroke="#18181B" stroke-width="2"/>';
-            frontHair = '<path d="M14 19 C16 12, 32 12, 34 19 C30 15, 22 15, 14 19 Z" fill="' + u.hair + '" stroke="#18181B" stroke-width="1.8"/>';
-          } else if (u.style === "bob") {
-            backHair = '<path d="M12 21 C12 9, 36 9, 36 21 L37 33 L11 33 Z" fill="' + u.hair + '" stroke="#18181B" stroke-width="2"/>';
-            frontHair = '<path d="M14 18 Q24 12 34 18" fill="' + u.hair + '" stroke="#18181B" stroke-width="2"/>';
-          } else if (u.style === "bun") {
-            backHair = '<circle cx="24" cy="9" r="6" fill="' + u.hair + '" stroke="#18181B" stroke-width="2"/><path d="M13 21 C13 10, 35 10, 35 21 Z" fill="' + u.hair + '" stroke="#18181B" stroke-width="2"/>';
-            frontHair = '<path d="M14 18 Q24 13 34 18" fill="' + u.hair + '" stroke="#18181B" stroke-width="1.8"/>';
-          } else if (u.style === "curly") {
-            backHair = '<circle cx="15" cy="14" r="5" fill="' + u.hair + '" stroke="#18181B" stroke-width="1.8"/><circle cx="24" cy="11" r="6" fill="' + u.hair + '" stroke="#18181B" stroke-width="1.8"/><circle cx="33" cy="14" r="5" fill="' + u.hair + '" stroke="#18181B" stroke-width="1.8"/>';
-            frontHair = '<path d="M14 16 Q24 12 34 16" fill="' + u.hair + '" stroke="#18181B" stroke-width="1.8"/>';
-          } else if (u.style === "cap") {
-            frontHair = '<path d="M12 17 C13 9, 35 9, 36 17 Z" fill="' + u.shirt + '" stroke="#18181B" stroke-width="2"/><path d="M11 17 H39" stroke="#18181B" stroke-width="2.4" stroke-linecap="round"/>';
-          } else if (u.style === "fade") {
-            frontHair = '<path d="M14 17 C15 10, 33 10, 34 17 L34 20 L14 20 Z" fill="' + u.hair + '" stroke="#18181B" stroke-width="1.8"/>';
+        function modernAvatarSvg(u, uid) {
+          var gid = "g" + uid;
+          var back = "";
+          var front = "";
+          if (u.style === "waves") {
+            back = '<path d="M12 27 C10 11, 38 11, 36 27 C39 36, 37 45, 33 46 L15 46 C11 45, 9 36, 12 27 Z" fill="' + u.hair + '"/>';
+            front = '<path d="M14 21 C15 11, 33 11, 34 21 C29 14, 21 15, 14 21 Z" fill="' + u.hair + '"/><path d="M16 16 Q24 12 31 15" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="1.4" fill="none" stroke-linecap="round"/>';
+          } else if (u.style === "sleekbob") {
+            back = '<path d="M12.5 23 C12 10, 36 10, 35.5 23 L37 35 C35 37, 13 37, 11 35 Z" fill="' + u.hair + '"/>';
+            front = '<path d="M14 20 C16 11, 32 11, 34 20 C29 14, 20 14, 14 20 Z" fill="' + u.hair + '"/><path d="M17 15 Q24 12 30 14.5" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1.3" fill="none" stroke-linecap="round"/>';
+          } else if (u.style === "messybun") {
+            back = '<circle cx="24" cy="9.5" r="5.8" fill="' + u.hair + '"/><path d="M13 22 C13 10.5, 35 10.5, 35 22 Z" fill="' + u.hair + '"/>';
+            front = '<path d="M14.5 19.5 Q24 12.5 33.5 19.5" fill="' + u.hair + '"/><path d="M21 8.5 Q24 6.5 27 8.5" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="1.2" fill="none" stroke-linecap="round"/>';
+          } else if (u.style === "curlytop") {
+            back = '<circle cx="16" cy="14" r="5.5" fill="' + u.hair + '"/><circle cx="24" cy="11.5" r="6.5" fill="' + u.hair + '"/><circle cx="32" cy="14" r="5.5" fill="' + u.hair + '"/>';
+            front = '<path d="M14.5 18 Q24 13.5 33.5 18" fill="' + u.hair + '"/>';
+          } else if (u.style === "beanie") {
+            front = '<path d="M13 19 C13 9, 35 9, 35 19 Z" fill="' + u.shirt + '"/><rect x="12" y="16" width="24" height="4.5" rx="2.2" fill="#09090B" opacity="0.22"/><path d="M15 15 Q24 11 33 15" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="1.4" fill="none" stroke-linecap="round"/>';
+          } else if (u.style === "curtain") {
+            front = '<path d="M13.5 21 C13 10, 35 10, 34.5 21 C31 15.5, 26 14.5, 24 19 C22 14.5, 17 15.5, 13.5 21 Z" fill="' + u.hair + '"/><path d="M16 14.5 Q24 11.5 32 14.5" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="1.3" fill="none" stroke-linecap="round"/>';
           } else {
-            frontHair = '<path d="M13 19 C14 9, 34 9, 35 19 C30 14, 19 14, 13 19 Z" fill="' + u.hair + '" stroke="#18181B" stroke-width="2"/>';
+            front = '<path d="M14 19.5 C14.5 10.5, 33.5 10.5, 34 19.5 C29.5 14.5, 18.5 14.5, 14 19.5 Z" fill="' + u.hair + '"/><path d="M16.5 14 Q24 11.5 31.5 14" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1.3" fill="none" stroke-linecap="round"/>';
           }
+          var podsSvg = u.pods
+            ? '<path d="M13 24 C11 10, 37 10, 35 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.9"/><rect x="11.2" y="21.5" width="3" height="6.5" rx="1.5" fill="#0F172A"/><rect x="33.8" y="21.5" width="3" height="6.5" rx="1.5" fill="#0F172A"/>'
+            : "";
           var glassesSvg = u.glasses
-            ? '<rect x="16.5" y="21" width="6" height="4.5" rx="1.5" fill="none" stroke="#18181B" stroke-width="1.6"/><rect x="25.5" y="21" width="6" height="4.5" rx="1.5" fill="none" stroke="#18181B" stroke-width="1.6"/><line x1="22.5" y1="23" x2="25.5" y2="23" stroke="#18181B" stroke-width="1.6"/>'
+            ? '<rect x="16.2" y="21.2" width="6.5" height="4.8" rx="2.2" fill="#FFFFFF" fill-opacity="0.22" stroke="#18181B" stroke-width="1.35"/><rect x="25.3" y="21.2" width="6.5" height="4.8" rx="2.2" fill="#FFFFFF" fill-opacity="0.22" stroke="#18181B" stroke-width="1.35"/><line x1="22.7" y1="23.4" x2="25.3" y2="23.4" stroke="#18181B" stroke-width="1.35"/>'
             : "";
           var beardSvg = u.beard
-            ? '<path d="M16 27 Q24 35 32 27 Q31 35 24 35.5 Q17 35 16 27 Z" fill="' + u.hair + '" opacity="0.88"/>'
+            ? '<path d="M15.8 27 C16 33.8, 32 33.8, 32.2 27 C31.2 35.5, 16.8 35.5, 15.8 27 Z" fill="' + u.hair + '" opacity="0.88"/>'
             : "";
           return (
             '<svg viewBox="0 0 48 48" width="48" height="48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
-            '<rect width="48" height="48" fill="' + u.bg + '"/>' +
-            '<circle cx="10" cy="10" r="1.4" fill="#18181B" opacity="0.12"/><circle cx="38" cy="12" r="1.4" fill="#18181B" opacity="0.12"/>' +
-            '<path d="M9 48 C10 37, 38 37, 39 48 Z" fill="' + u.shirt + '" stroke="#18181B" stroke-width="2"/>' +
-            backHair +
-            '<circle cx="14" cy="24" r="2.2" fill="' + u.skin + '" stroke="#18181B" stroke-width="1.8"/>' +
-            '<circle cx="34" cy="24" r="2.2" fill="' + u.skin + '" stroke="#18181B" stroke-width="1.8"/>' +
-            '<rect x="14.5" y="13.5" width="19" height="21" rx="9.5" fill="' + u.skin + '" stroke="#18181B" stroke-width="2"/>' +
+            '<defs><linearGradient id="' + gid + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="' + u.g1 + '"/><stop offset="100%" stop-color="' + u.g2 + '"/></linearGradient></defs>' +
+            '<rect width="48" height="48" fill="url(#' + gid + ')"/>' +
+            '<circle cx="24" cy="14" r="18" fill="#FFFFFF" opacity="0.16"/>' +
+            '<path d="M8.5 48 C10 36.5, 38 36.5, 39.5 48 Z" fill="' + u.shirt + '"/>' +
+            '<path d="M20.5 34 H27.5 V39.5 C27.5 41.5, 20.5 41.5, 20.5 39.5 Z" fill="' + u.skin + '"/>' +
+            '<ellipse cx="24" cy="35.2" rx="4" ry="2.2" fill="#000000" opacity="0.12"/>' +
+            back +
+            '<circle cx="14.5" cy="24.5" r="2.3" fill="' + u.skin + '"/>' +
+            '<circle cx="33.5" cy="24.5" r="2.3" fill="' + u.skin + '"/>' +
+            '<rect x="14.8" y="13.8" width="18.4" height="21.4" rx="9.2" fill="' + u.skin + '"/>' +
+            '<ellipse cx="17.8" cy="26.5" rx="2.1" ry="1.1" fill="#F43F5E" opacity="0.18"/>' +
+            '<ellipse cx="30.2" cy="26.5" rx="2.1" ry="1.1" fill="#F43F5E" opacity="0.18"/>' +
             beardSvg +
-            frontHair +
-            '<circle cx="19.5" cy="23.2" r="1.4" fill="#18181B"/><circle cx="28.5" cy="23.2" r="1.4" fill="#18181B"/>' +
+            front +
+            '<circle cx="19.5" cy="23.5" r="1.5" fill="#18181B"/><circle cx="28.5" cy="23.5" r="1.5" fill="#18181B"/>' +
+            '<circle cx="19.9" cy="23" r="0.55" fill="#FFFFFF"/><circle cx="28.9" cy="23" r="0.55" fill="#FFFFFF"/>' +
+            '<path d="M17.5 20.5 Q19.5 19.6 21.4 20.4" stroke="' + u.hair + '" stroke-width="1.2" fill="none" stroke-linecap="round"/>' +
+            '<path d="M26.6 20.4 Q28.5 19.6 30.5 20.5" stroke="' + u.hair + '" stroke-width="1.2" fill="none" stroke-linecap="round"/>' +
             glassesSvg +
-            '<path d="M20.5 28.5 Q24 31.2 27.5 28.5" fill="none" stroke="' + (u.beard ? "#FFFFFF" : "#18181B") + '" stroke-width="1.8" stroke-linecap="round"/>' +
+            podsSvg +
+            '<path d="M20.8 29 Q24 31.6 27.2 29" fill="none" stroke="' + (u.beard ? "#FFFFFF" : "#18181B") + '" stroke-width="1.6" stroke-linecap="round"/>' +
             '</svg>'
           );
         }
@@ -422,6 +416,7 @@
           var cycleTimer = null;
           var hideTimer = null;
           var ctaInView = false;
+          var renderSeq = 0;
 
           function pickNextUser() {
             var nextIdx;
@@ -435,7 +430,8 @@
           function showOne() {
             if (!ctaInView) return;
             var u = pickNextUser();
-            avatarEl.innerHTML = comicAvatarSvg(u);
+            renderSeq += 1;
+            avatarEl.innerHTML = modernAvatarSvg(u, renderSeq);
             nameEl.textContent = u.name;
             roleEl.textContent = u.role;
             msgEl.textContent = u.msg;
