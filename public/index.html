@@ -17,8 +17,38 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles.css" />
+    <!-- Meta Pixel Code (1134669206072761) -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+      fbq("init", "1134669206072761");
+      fbq("track", "PageView");
+    </script>
   </head>
   <body class="min-h-screen bg-white text-zinc-950 antialiased selection:bg-meta-500 selection:text-white">
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1134669206072761&ev=PageView&noscript=1"
+        alt=""
+      />
+    </noscript>
     <!-- Top Reading Progress Hairline -->
     <div class="pointer-events-none fixed inset-x-0 top-0 z-[60] h-[3px] bg-transparent">
       <div
@@ -595,6 +625,10 @@
                 if (entries[i].isIntersecting) {
                   ctaInView = true;
                   startCycle();
+                  if (!window._pfViewContentFired && typeof window.fbq === "function") {
+                    window._pfViewContentFired = true;
+                    window.fbq("track", "ViewContent", { content_name: "Super AI Agent Pre-Lander" });
+                  }
                 } else {
                   ctaInView = false;
                   stopCycle();
@@ -604,6 +638,15 @@
             { threshold: 0.15 }
           );
           ctaObserver.observe(ctaSection);
+
+          document.querySelectorAll("a[data-forward-params]").forEach(function (link) {
+            link.addEventListener("click", function () {
+              if (!window._pfViewContentFired && typeof window.fbq === "function") {
+                window._pfViewContentFired = true;
+                window.fbq("track", "ViewContent", { content_name: "Super AI Agent Pre-Lander" });
+              }
+            });
+          });
         }
       })();
     </script>
