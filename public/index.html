@@ -226,11 +226,11 @@
                 multi-platform ad batch in minutes.
               </p>
 
-              <div class="mt-8 flex justify-center">
+              <div class="mt-8 flex flex-col items-center justify-center gap-4 lg:flex-row lg:gap-5">
                 <a
                   href="https://www.proteusflow.com"
                   data-forward-params
-                  class="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-meta-500 py-4 pl-7 pr-4 text-base font-extrabold text-white shadow-meta transition hover:bg-meta-600 sm:w-auto sm:py-4 sm:pl-9 sm:pr-4 sm:text-lg"
+                  class="group inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-full bg-meta-500 py-4 pl-7 pr-4 text-base font-extrabold text-white shadow-meta transition hover:bg-meta-600 sm:w-auto sm:py-4 sm:pl-9 sm:pr-4 sm:text-lg"
                 >
                   Continue to Super AI Agent
                   <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white text-meta-600 transition-transform group-hover:translate-x-1">
@@ -240,6 +240,28 @@
                     </svg>
                   </span>
                 </a>
+
+                <!-- Live Notification Beside CTA Button (Appears on scroll to CTA, cycles every 2s) -->
+                <div class="flex min-h-[84px] w-full max-w-sm items-center justify-center lg:w-[340px] lg:justify-start">
+                  <div
+                    id="activity-toast"
+                    aria-live="polite"
+                    class="pf-toast pf-toast-hidden flex w-full items-center gap-3 rounded-2xl border border-black/10 bg-white px-3.5 py-2.5 text-left shadow-card"
+                  >
+                    <div id="activity-avatar" class="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl border-2 border-zinc-900 bg-meta-50"></div>
+                    <div class="min-w-0 flex-1">
+                      <div class="flex items-center justify-between gap-2">
+                        <span id="activity-name" class="truncate text-sm font-extrabold leading-tight text-zinc-950"></span>
+                        <span class="inline-flex shrink-0 items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 font-mono text-[10px] font-bold text-emerald-700">
+                          <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                          <span id="activity-time">Just now</span>
+                        </span>
+                      </div>
+                      <p id="activity-role" class="text-[11px] font-bold uppercase tracking-wide text-meta-600"></p>
+                      <p id="activity-msg" class="mt-0.5 truncate text-xs font-medium text-zinc-600"></p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -315,6 +337,151 @@
             });
           }
         });
+
+        // 3. 20 Virtual Users with Name-Matched Comic SVG Avatars & 2s CTA Notification Cycle
+        var USERS = [
+          { name: "Sam", role: "Brand owner", msg: "Subscribed to the Pro plan", time: "Just now", bg: "#DBEAFE", skin: "#F3C6A5", hair: "#1E293B", style: "short", shirt: "#0866FF", glasses: true, beard: true },
+          { name: "Leila", role: "Creative strategist", msg: "Has batched 15 creatives today", time: "1m ago", bg: "#DCFCE7", skin: "#E5B28A", hair: "#3B1F16", style: "long", shirt: "#10B981", glasses: false, beard: false },
+          { name: "Marwan", role: "Video editor", msg: "Has just signed up", time: "Just now", bg: "#FEF3C7", skin: "#D99B72", hair: "#111827", style: "curly", shirt: "#18181B", glasses: false, beard: true },
+          { name: "Chloe", role: "Ecom store owner", msg: "Claimed the 50% launch promo", time: "2m ago", bg: "#FCE7F3", skin: "#F9D6C1", hair: "#B45309", style: "bob", shirt: "#EC4899", glasses: true, beard: false },
+          { name: "Tariq", role: "Media buyer", msg: "Exported 24 Meta & TikTok ads", time: "Just now", bg: "#E0E7FF", skin: "#C88A65", hair: "#0F172A", style: "fade", shirt: "#4F46E5", glasses: false, beard: true },
+          { name: "Maya", role: "Creative director", msg: "Joined the 35% affiliate program", time: "3m ago", bg: "#D1FAE5", skin: "#E9B796", hair: "#271710", style: "bun", shirt: "#059669", glasses: false, beard: false },
+          { name: "Noah", role: "Performance lead", msg: "Upgraded to the Max plan", time: "1m ago", bg: "#E0F2FE", skin: "#F5CCB0", hair: "#78350F", style: "part", shirt: "#0284C7", glasses: true, beard: false },
+          { name: "Yasmine", role: "UGC strategist", msg: "Batched 18 Reels variations today", time: "Just now", bg: "#FAE8FF", skin: "#DDA47E", hair: "#1F2937", style: "long", shirt: "#9333EA", glasses: false, beard: false },
+          { name: "Lucas", role: "Agency founder", msg: "Launched a 12-video ZIP batch", time: "4m ago", bg: "#FEF9C3", skin: "#F7D3BA", hair: "#451A03", style: "cap", shirt: "#EA580C", glasses: false, beard: true },
+          { name: "Nadia", role: "Brand owner", msg: "Has just signed up for Pro", time: "Just now", bg: "#DCFCE7", skin: "#D79B74", hair: "#18181B", style: "bob", shirt: "#0866FF", glasses: true, beard: false },
+          { name: "Karim", role: "Senior video editor", msg: "Formatted 30 ad angles today", time: "2m ago", bg: "#DBEAFE", skin: "#C68B63", hair: "#111827", style: "short", shirt: "#0F766E", glasses: true, beard: true },
+          { name: "Sofia", role: "Ecom growth lead", msg: "Subscribed to the Max plan", time: "Just now", bg: "#FFE4E6", skin: "#F4C9AD", hair: "#5B2314", style: "long", shirt: "#E11D48", glasses: false, beard: false },
+          { name: "Adam", role: "Media buyer", msg: "Unlocked the 50% launch promo", time: "1m ago", bg: "#ECFDF5", skin: "#E8BA97", hair: "#1E293B", style: "fade", shirt: "#10B981", glasses: false, beard: false },
+          { name: "Hiba", role: "Content strategist", msg: "Batched 22 TikTok creatives today", time: "Just now", bg: "#EDE9FE", skin: "#DCA27C", hair: "#291812", style: "bun", shirt: "#6366F1", glasses: true, beard: false },
+          { name: "Omar", role: "DTC founder", msg: "Has just signed up", time: "2m ago", bg: "#FFEDD5", skin: "#BF835D", hair: "#0F172A", style: "curly", shirt: "#2563EB", glasses: false, beard: true },
+          { name: "Elena", role: "Paid social lead", msg: "Exported 16 campaign videos today", time: "Just now", bg: "#CFFAFE", skin: "#FAD7C3", hair: "#92400E", style: "part", shirt: "#0891B2", glasses: false, beard: false },
+          { name: "Zayd", role: "Video editor", msg: "Joined the 35% affiliate program", time: "3m ago", bg: "#DBEAFE", skin: "#CE936D", hair: "#18181B", style: "cap", shirt: "#1D4ED8", glasses: true, beard: false },
+          { name: "Lina", role: "Brand strategist", msg: "Subscribed to the Pro plan", time: "Just now", bg: "#FEF3C7", skin: "#ECC09E", hair: "#3F2316", style: "bob", shirt: "#D97706", glasses: false, beard: false },
+          { name: "Ryan", role: "Ad creative lead", msg: "Batched 14 hook variations today", time: "1m ago", bg: "#F1F5F9", skin: "#F6CEB2", hair: "#713F12", style: "short", shirt: "#0F172A", glasses: false, beard: true },
+          { name: "Farah", role: "Ecom store owner", msg: "Has just launched her workspace", time: "Just now", bg: "#DCFCE7", skin: "#DDA480", hair: "#1F2937", style: "long", shirt: "#059669", glasses: true, beard: false }
+        ];
+
+        function comicAvatarSvg(u) {
+          var backHair = "";
+          var frontHair = "";
+          if (u.style === "long") {
+            backHair = '<path d="M12 22 C11 10, 37 10, 36 22 L38 42 L10 42 Z" fill="' + u.hair + '" stroke="#18181B" stroke-width="2"/>';
+            frontHair = '<path d="M14 19 C16 12, 32 12, 34 19 C30 15, 22 15, 14 19 Z" fill="' + u.hair + '" stroke="#18181B" stroke-width="1.8"/>';
+          } else if (u.style === "bob") {
+            backHair = '<path d="M12 21 C12 9, 36 9, 36 21 L37 33 L11 33 Z" fill="' + u.hair + '" stroke="#18181B" stroke-width="2"/>';
+            frontHair = '<path d="M14 18 Q24 12 34 18" fill="' + u.hair + '" stroke="#18181B" stroke-width="2"/>';
+          } else if (u.style === "bun") {
+            backHair = '<circle cx="24" cy="9" r="6" fill="' + u.hair + '" stroke="#18181B" stroke-width="2"/><path d="M13 21 C13 10, 35 10, 35 21 Z" fill="' + u.hair + '" stroke="#18181B" stroke-width="2"/>';
+            frontHair = '<path d="M14 18 Q24 13 34 18" fill="' + u.hair + '" stroke="#18181B" stroke-width="1.8"/>';
+          } else if (u.style === "curly") {
+            backHair = '<circle cx="15" cy="14" r="5" fill="' + u.hair + '" stroke="#18181B" stroke-width="1.8"/><circle cx="24" cy="11" r="6" fill="' + u.hair + '" stroke="#18181B" stroke-width="1.8"/><circle cx="33" cy="14" r="5" fill="' + u.hair + '" stroke="#18181B" stroke-width="1.8"/>';
+            frontHair = '<path d="M14 16 Q24 12 34 16" fill="' + u.hair + '" stroke="#18181B" stroke-width="1.8"/>';
+          } else if (u.style === "cap") {
+            frontHair = '<path d="M12 17 C13 9, 35 9, 36 17 Z" fill="' + u.shirt + '" stroke="#18181B" stroke-width="2"/><path d="M11 17 H39" stroke="#18181B" stroke-width="2.4" stroke-linecap="round"/>';
+          } else if (u.style === "fade") {
+            frontHair = '<path d="M14 17 C15 10, 33 10, 34 17 L34 20 L14 20 Z" fill="' + u.hair + '" stroke="#18181B" stroke-width="1.8"/>';
+          } else {
+            frontHair = '<path d="M13 19 C14 9, 34 9, 35 19 C30 14, 19 14, 13 19 Z" fill="' + u.hair + '" stroke="#18181B" stroke-width="2"/>';
+          }
+          var glassesSvg = u.glasses
+            ? '<rect x="16.5" y="21" width="6" height="4.5" rx="1.5" fill="none" stroke="#18181B" stroke-width="1.6"/><rect x="25.5" y="21" width="6" height="4.5" rx="1.5" fill="none" stroke="#18181B" stroke-width="1.6"/><line x1="22.5" y1="23" x2="25.5" y2="23" stroke="#18181B" stroke-width="1.6"/>'
+            : "";
+          var beardSvg = u.beard
+            ? '<path d="M16 27 Q24 35 32 27 Q31 35 24 35.5 Q17 35 16 27 Z" fill="' + u.hair + '" opacity="0.88"/>'
+            : "";
+          return (
+            '<svg viewBox="0 0 48 48" width="48" height="48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+            '<rect width="48" height="48" fill="' + u.bg + '"/>' +
+            '<circle cx="10" cy="10" r="1.4" fill="#18181B" opacity="0.12"/><circle cx="38" cy="12" r="1.4" fill="#18181B" opacity="0.12"/>' +
+            '<path d="M9 48 C10 37, 38 37, 39 48 Z" fill="' + u.shirt + '" stroke="#18181B" stroke-width="2"/>' +
+            backHair +
+            '<circle cx="14" cy="24" r="2.2" fill="' + u.skin + '" stroke="#18181B" stroke-width="1.8"/>' +
+            '<circle cx="34" cy="24" r="2.2" fill="' + u.skin + '" stroke="#18181B" stroke-width="1.8"/>' +
+            '<rect x="14.5" y="13.5" width="19" height="21" rx="9.5" fill="' + u.skin + '" stroke="#18181B" stroke-width="2"/>' +
+            beardSvg +
+            frontHair +
+            '<circle cx="19.5" cy="23.2" r="1.4" fill="#18181B"/><circle cx="28.5" cy="23.2" r="1.4" fill="#18181B"/>' +
+            glassesSvg +
+            '<path d="M20.5 28.5 Q24 31.2 27.5 28.5" fill="none" stroke="' + (u.beard ? "#FFFFFF" : "#18181B") + '" stroke-width="1.8" stroke-linecap="round"/>' +
+            '</svg>'
+          );
+        }
+
+        var toastEl = document.getElementById("activity-toast");
+        var avatarEl = document.getElementById("activity-avatar");
+        var nameEl = document.getElementById("activity-name");
+        var roleEl = document.getElementById("activity-role");
+        var msgEl = document.getElementById("activity-msg");
+        var timeEl = document.getElementById("activity-time");
+        var ctaSection = document.getElementById("cta");
+
+        if (toastEl && ctaSection && avatarEl && nameEl && roleEl && msgEl && timeEl) {
+          var pool = USERS.slice();
+          var lastIndex = -1;
+          var cycleTimer = null;
+          var hideTimer = null;
+          var ctaInView = false;
+
+          function pickNextUser() {
+            var nextIdx;
+            do {
+              nextIdx = Math.floor(Math.random() * pool.length);
+            } while (nextIdx === lastIndex && pool.length > 1);
+            lastIndex = nextIdx;
+            return pool[nextIdx];
+          }
+
+          function showOne() {
+            if (!ctaInView) return;
+            var u = pickNextUser();
+            avatarEl.innerHTML = comicAvatarSvg(u);
+            nameEl.textContent = u.name;
+            roleEl.textContent = u.role;
+            msgEl.textContent = u.msg;
+            timeEl.textContent = u.time;
+            toastEl.classList.remove("pf-toast-hidden");
+            toastEl.classList.add("pf-toast-visible");
+
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(function () {
+              toastEl.classList.remove("pf-toast-visible");
+              toastEl.classList.add("pf-toast-hidden");
+            }, 1650);
+          }
+
+          function startCycle() {
+            if (cycleTimer) return;
+            showOne();
+            cycleTimer = setInterval(showOne, 2000);
+          }
+
+          function stopCycle() {
+            if (cycleTimer) {
+              clearInterval(cycleTimer);
+              cycleTimer = null;
+            }
+            clearTimeout(hideTimer);
+            toastEl.classList.remove("pf-toast-visible");
+            toastEl.classList.add("pf-toast-hidden");
+          }
+
+          var ctaObserver = new IntersectionObserver(
+            function (entries) {
+              for (var i = 0; i < entries.length; i++) {
+                if (entries[i].isIntersecting) {
+                  ctaInView = true;
+                  startCycle();
+                } else {
+                  ctaInView = false;
+                  stopCycle();
+                }
+              }
+            },
+            { threshold: 0.15 }
+          );
+          ctaObserver.observe(ctaSection);
+        }
       })();
     </script>
   </body>
