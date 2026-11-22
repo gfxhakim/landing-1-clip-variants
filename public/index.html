@@ -359,7 +359,14 @@
                     aria-live="polite"
                     class="pf-toast pf-toast-hidden flex w-full items-center gap-3.5 rounded-2xl border border-black/[0.08] bg-white/95 px-3.5 py-2.5 text-left shadow-[0_14px_34px_-12px_rgba(15,23,42,0.18)] backdrop-blur-md"
                   >
-                    <div id="activity-avatar" class="relative h-12 w-12 shrink-0 overflow-hidden rounded-full ring-2 ring-meta-500/20 shadow-sm bg-meta-50"></div>
+                    <div class="relative h-12 w-12 shrink-0">
+                      <div id="activity-avatar" class="h-12 w-12 overflow-hidden rounded-full ring-2 ring-meta-500/20 shadow-sm bg-meta-50"></div>
+                      <span
+                        id="activity-flag"
+                        class="absolute -right-1 -top-1 z-10 h-[18px] w-[18px] overflow-hidden rounded-full bg-white ring-2 ring-white shadow-sm"
+                        aria-hidden="true"
+                      ></span>
+                    </div>
                     <div class="min-w-0 flex-1">
                       <div class="flex items-center justify-between gap-2">
                         <span id="activity-name" class="truncate text-sm font-extrabold leading-tight text-zinc-950"></span>
@@ -476,29 +483,68 @@
           }
         });
 
-        // 3. 20 Virtual Users with Trending Modern Gradient Illustrated Avatars & 2s Notification Cycle
+        // 3. 20 Mixed European Virtual Users (Spain, Germany, France, UK) with Country Flags & 2s Cycle
         var USERS = [
-          { name: "Sam", role: "Brand owner", msg: "Subscribed to the Pro plan", time: "Just now", g1: "#60A5FA", g2: "#2563EB", skin: "#F3C6A5", hair: "#18181B", style: "curtain", shirt: "#0F172A", glasses: true, beard: true, pods: true },
-          { name: "Leila", role: "Creative strategist", msg: "Has batched 15 creatives today", time: "1m ago", g1: "#34D399", g2: "#059669", skin: "#E5B28A", hair: "#3B1F16", style: "waves", shirt: "#FFFFFF", glasses: false, beard: false, pods: false },
-          { name: "Marwan", role: "Video editor", msg: "Has just signed up", time: "Just now", g1: "#FBBF24", g2: "#EA580C", skin: "#D99B72", hair: "#111827", style: "taper", shirt: "#18181B", glasses: false, beard: true, pods: true },
-          { name: "Chloe", role: "Ecom store owner", msg: "Claimed the 50% launch promo", time: "2m ago", g1: "#F472B6", g2: "#DB2777", skin: "#F9D6C1", hair: "#B45309", style: "sleekbob", shirt: "#1E293B", glasses: true, beard: false, pods: false },
-          { name: "Tariq", role: "Media buyer", msg: "Exported 24 Meta & TikTok ads", time: "Just now", g1: "#818CF8", g2: "#4F46E5", skin: "#C88A65", hair: "#09090B", style: "crop", shirt: "#F8FAFC", glasses: false, beard: true, pods: false },
-          { name: "Maya", role: "Creative director", msg: "Joined the 35% affiliate program", time: "3m ago", g1: "#2DD4BF", g2: "#0D9488", skin: "#E9B796", hair: "#271710", style: "messybun", shirt: "#111827", glasses: true, beard: false, pods: false },
-          { name: "Noah", role: "Performance lead", msg: "Upgraded to the Max plan", time: "1m ago", g1: "#38BDF8", g2: "#0284C7", skin: "#F5CCB0", hair: "#78350F", style: "curtain", shirt: "#0866FF", glasses: false, beard: false, pods: true },
-          { name: "Yasmine", role: "UGC strategist", msg: "Batched 18 Reels variations today", time: "Just now", g1: "#C084FC", g2: "#9333EA", skin: "#DDA47E", hair: "#1F2937", style: "waves", shirt: "#0F172A", glasses: false, beard: false, pods: false },
-          { name: "Lucas", role: "Agency founder", msg: "Launched a 12-video ZIP batch", time: "4m ago", g1: "#FB923C", g2: "#DC2626", skin: "#F7D3BA", hair: "#451A03", style: "beanie", shirt: "#1E293B", glasses: false, beard: true, pods: false },
-          { name: "Nadia", role: "Brand owner", msg: "Has just signed up for Pro", time: "Just now", g1: "#4ADE80", g2: "#0866FF", skin: "#D79B74", hair: "#18181B", style: "sleekbob", shirt: "#FFFFFF", glasses: true, beard: false, pods: true },
-          { name: "Karim", role: "Senior video editor", msg: "Formatted 30 ad angles today", time: "2m ago", g1: "#60A5FA", g2: "#0F766E", skin: "#C68B63", hair: "#111827", style: "crop", shirt: "#0F172A", glasses: true, beard: true, pods: false },
-          { name: "Sofia", role: "Ecom growth lead", msg: "Subscribed to the Max plan", time: "Just now", g1: "#FB7185", g2: "#E11D48", skin: "#F4C9AD", hair: "#5B2314", style: "waves", shirt: "#1E293B", glasses: false, beard: false, pods: false },
-          { name: "Adam", role: "Media buyer", msg: "Unlocked the 50% launch promo", time: "1m ago", g1: "#34D399", g2: "#10B981", skin: "#E8BA97", hair: "#1E293B", style: "taper", shirt: "#09090B", glasses: false, beard: false, pods: true },
-          { name: "Hiba", role: "Content strategist", msg: "Batched 22 TikTok creatives today", time: "Just now", g1: "#A78BFA", g2: "#6366F1", skin: "#DCA27C", hair: "#291812", style: "messybun", shirt: "#F8FAFC", glasses: true, beard: false, pods: false },
-          { name: "Omar", role: "DTC founder", msg: "Has just signed up", time: "2m ago", g1: "#FBBF24", g2: "#D97706", skin: "#BF835D", hair: "#0F172A", style: "curlytop", shirt: "#0866FF", glasses: false, beard: true, pods: false },
-          { name: "Elena", role: "Paid social lead", msg: "Exported 16 campaign videos today", time: "Just now", g1: "#22D3EE", g2: "#0891B2", skin: "#FAD7C3", hair: "#92400E", style: "sleekbob", shirt: "#111827", glasses: false, beard: false, pods: true },
-          { name: "Zayd", role: "Video editor", msg: "Joined the 35% affiliate program", time: "3m ago", g1: "#3B82F6", g2: "#1D4ED8", skin: "#CE936D", hair: "#18181B", style: "beanie", shirt: "#FFFFFF", glasses: true, beard: false, pods: false },
-          { name: "Lina", role: "Brand strategist", msg: "Subscribed to the Pro plan", time: "Just now", g1: "#F59E0B", g2: "#EA580C", skin: "#ECC09E", hair: "#3F2316", style: "waves", shirt: "#0F172A", glasses: false, beard: false, pods: false },
-          { name: "Ryan", role: "Ad creative lead", msg: "Batched 14 hook variations today", time: "1m ago", g1: "#64748B", g2: "#0F172A", skin: "#F6CEB2", hair: "#713F12", style: "curtain", shirt: "#10B981", glasses: false, beard: true, pods: true },
-          { name: "Farah", role: "Ecom store owner", msg: "Has just launched her workspace", time: "Just now", g1: "#10B981", g2: "#047857", skin: "#DDA480", hair: "#1F2937", style: "messybun", shirt: "#0866FF", glasses: true, beard: false, pods: false }
+          // Spain (ES)
+          { name: "Alejandro", country: "ES", role: "Brand owner", msg: "Subscribed to the Pro plan", time: "Just now", g1: "#60A5FA", g2: "#2563EB", skin: "#E5B28A", hair: "#18181B", style: "curtain", shirt: "#0F172A", glasses: true, beard: true, pods: true },
+          { name: "Lucía", country: "ES", role: "Creative strategist", msg: "Has batched 15 creatives today", time: "1m ago", g1: "#34D399", g2: "#059669", skin: "#ECC09E", hair: "#3B1F16", style: "waves", shirt: "#FFFFFF", glasses: false, beard: false, pods: false },
+          { name: "Mateo", country: "ES", role: "Video editor", msg: "Has just signed up", time: "Just now", g1: "#FBBF24", g2: "#EA580C", skin: "#D99B72", hair: "#111827", style: "taper", shirt: "#18181B", glasses: false, beard: true, pods: true },
+          { name: "Sofía", country: "ES", role: "Ecom store owner", msg: "Claimed the 50% launch promo", time: "2m ago", g1: "#FB7185", g2: "#E11D48", skin: "#F4C9AD", hair: "#5B2314", style: "sleekbob", shirt: "#1E293B", glasses: true, beard: false, pods: false },
+          { name: "Pablo", country: "ES", role: "Media buyer", msg: "Exported 24 Meta & TikTok ads", time: "Just now", g1: "#818CF8", g2: "#4F46E5", skin: "#DDA47E", hair: "#09090B", style: "crop", shirt: "#F8FAFC", glasses: false, beard: true, pods: false },
+          // Germany (DE)
+          { name: "Lukas", country: "DE", role: "Agency founder", msg: "Launched a 12-video ZIP batch", time: "1m ago", g1: "#38BDF8", g2: "#0284C7", skin: "#F7D3BA", hair: "#78350F", style: "curtain", shirt: "#0866FF", glasses: false, beard: false, pods: true },
+          { name: "Hannah", country: "DE", role: "Creative director", msg: "Joined the 35% affiliate program", time: "3m ago", g1: "#2DD4BF", g2: "#0D9488", skin: "#FAD7C3", hair: "#92400E", style: "messybun", shirt: "#111827", glasses: true, beard: false, pods: false },
+          { name: "Jonas", country: "DE", role: "Performance lead", msg: "Upgraded to the Max plan", time: "Just now", g1: "#60A5FA", g2: "#0F766E", skin: "#F5CCB0", hair: "#451A03", style: "beanie", shirt: "#0F172A", glasses: true, beard: true, pods: false },
+          { name: "Leonie", country: "DE", role: "UGC strategist", msg: "Batched 18 Reels variations today", time: "2m ago", g1: "#C084FC", g2: "#9333EA", skin: "#F9D6C1", hair: "#B45309", style: "waves", shirt: "#0F172A", glasses: false, beard: false, pods: false },
+          { name: "Tobias", country: "DE", role: "Senior video editor", msg: "Formatted 30 ad angles today", time: "1m ago", g1: "#34D399", g2: "#10B981", skin: "#F3C6A5", hair: "#1E293B", style: "taper", shirt: "#09090B", glasses: false, beard: false, pods: true },
+          // France (FR)
+          { name: "Camille", country: "FR", role: "Brand owner", msg: "Has just signed up for Pro", time: "Just now", g1: "#4ADE80", g2: "#0866FF", skin: "#F4C9AD", hair: "#18181B", style: "sleekbob", shirt: "#FFFFFF", glasses: true, beard: false, pods: true },
+          { name: "Hugo", country: "FR", role: "Media buyer", msg: "Unlocked the 50% launch promo", time: "2m ago", g1: "#FB923C", g2: "#DC2626", skin: "#E8BA97", hair: "#271710", style: "curlytop", shirt: "#0866FF", glasses: false, beard: true, pods: false },
+          { name: "Chloé", country: "FR", role: "Content strategist", msg: "Batched 22 TikTok creatives today", time: "Just now", g1: "#A78BFA", g2: "#6366F1", skin: "#F9D6C1", hair: "#5B2314", style: "messybun", shirt: "#F8FAFC", glasses: true, beard: false, pods: false },
+          { name: "Théo", country: "FR", role: "Video editor", msg: "Joined the 35% affiliate program", time: "3m ago", g1: "#3B82F6", g2: "#1D4ED8", skin: "#ECC09E", hair: "#18181B", style: "beanie", shirt: "#FFFFFF", glasses: true, beard: false, pods: false },
+          { name: "Manon", country: "FR", role: "Ecom growth lead", msg: "Subscribed to the Max plan", time: "Just now", g1: "#F472B6", g2: "#DB2777", skin: "#FAD7C3", hair: "#3F2316", style: "waves", shirt: "#0F172A", glasses: false, beard: false, pods: false },
+          // United Kingdom (GB)
+          { name: "Oliver", country: "GB", role: "DTC founder", msg: "Has just signed up", time: "Just now", g1: "#64748B", g2: "#0F172A", skin: "#F6CEB2", hair: "#713F12", style: "curtain", shirt: "#10B981", glasses: false, beard: true, pods: true },
+          { name: "Amelia", country: "GB", role: "Paid social lead", msg: "Exported 16 campaign videos today", time: "1m ago", g1: "#22D3EE", g2: "#0891B2", skin: "#F9D6C1", hair: "#92400E", style: "sleekbob", shirt: "#111827", glasses: false, beard: false, pods: true },
+          { name: "Harry", country: "GB", role: "Ad creative lead", msg: "Batched 14 hook variations today", time: "2m ago", g1: "#F59E0B", g2: "#EA580C", skin: "#F3C6A5", hair: "#451A03", style: "crop", shirt: "#0F172A", glasses: true, beard: false, pods: false },
+          { name: "Grace", role: "Ecom store owner", country: "GB", msg: "Has just launched her workspace", time: "Just now", g1: "#10B981", g2: "#047857", skin: "#F5CCB0", hair: "#1F2937", style: "messybun", shirt: "#0866FF", glasses: true, beard: false, pods: false },
+          { name: "Charlie", country: "GB", role: "Brand strategist", msg: "Subscribed to the Pro plan", time: "1m ago", g1: "#818CF8", g2: "#2563EB", skin: "#E9B796", hair: "#18181B", style: "taper", shirt: "#1E293B", glasses: false, beard: true, pods: false }
         ];
+
+        function flagSvg(code, uid) {
+          var cid = "fc" + uid;
+          var body = "";
+          if (code === "ES") {
+            body =
+              '<rect width="24" height="6" y="0" fill="#DC2626"/>' +
+              '<rect width="24" height="12" y="6" fill="#FACC15"/>' +
+              '<rect width="24" height="6" y="18" fill="#DC2626"/>' +
+              '<circle cx="8" cy="12" r="2.2" fill="#B91C1C"/>';
+          } else if (code === "DE") {
+            body =
+              '<rect width="24" height="8" y="0" fill="#18181B"/>' +
+              '<rect width="24" height="8" y="8" fill="#DC2626"/>' +
+              '<rect width="24" height="8" y="16" fill="#FACC15"/>';
+          } else if (code === "FR") {
+            body =
+              '<rect width="8" height="24" x="0" fill="#1D4ED8"/>' +
+              '<rect width="8" height="24" x="8" fill="#FFFFFF"/>' +
+              '<rect width="8" height="24" x="16" fill="#DC2626"/>';
+          } else {
+            body =
+              '<rect width="24" height="24" fill="#1E3A8A"/>' +
+              '<path d="M0 0 L24 24 M24 0 L0 24" stroke="#FFFFFF" stroke-width="4.5"/>' +
+              '<path d="M0 0 L24 24 M24 0 L0 24" stroke="#DC2626" stroke-width="2"/>' +
+              '<path d="M12 0 V24 M0 12 H24" stroke="#FFFFFF" stroke-width="7"/>' +
+              '<path d="M12 0 V24 M0 12 H24" stroke="#DC2626" stroke-width="4"/>';
+          }
+          return (
+            '<svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">' +
+            '<defs><clipPath id="' + cid + '"><circle cx="12" cy="12" r="12"/></clipPath></defs>' +
+            '<g clip-path="url(#' + cid + ')">' + body + '</g>' +
+            '</svg>'
+          );
+        }
 
         function modernAvatarSvg(u, uid) {
           var gid = "g" + uid;
@@ -561,13 +607,14 @@
 
         var toastEl = document.getElementById("activity-toast");
         var avatarEl = document.getElementById("activity-avatar");
+        var flagEl = document.getElementById("activity-flag");
         var nameEl = document.getElementById("activity-name");
         var roleEl = document.getElementById("activity-role");
         var msgEl = document.getElementById("activity-msg");
         var timeEl = document.getElementById("activity-time");
         var ctaSection = document.getElementById("cta");
 
-        if (toastEl && ctaSection && avatarEl && nameEl && roleEl && msgEl && timeEl) {
+        if (toastEl && ctaSection && avatarEl && flagEl && nameEl && roleEl && msgEl && timeEl) {
           var pool = USERS.slice();
           var lastIndex = -1;
           var cycleTimer = null;
@@ -589,6 +636,7 @@
             var u = pickNextUser();
             renderSeq += 1;
             avatarEl.innerHTML = modernAvatarSvg(u, renderSeq);
+            flagEl.innerHTML = flagSvg(u.country, renderSeq);
             nameEl.textContent = u.name;
             roleEl.textContent = u.role;
             msgEl.textContent = u.msg;
